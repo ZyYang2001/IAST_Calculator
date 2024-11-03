@@ -395,7 +395,7 @@ P1 = double(P1);P2 = double(P2);P3 = double(P3);
  fun = @(x)[integral(a,0,P1/x(1))-integral(b,0,P2/x(2));
         integral(b,0,P2/x(2))-integral(c,0,P3/x(3));
         x(1)+x(2)+x(3)-1];
-x0 = [1 0.01 0.01];
+x0 = [1 0.001 0.001];
 x = fsolve(fun,x0);
 
     x1 = double(x(1));
@@ -460,7 +460,7 @@ y3 = str2sym(get(handles.edit6,'string'));
 i = 0;
 P_lo = 100;
 P_int = 10;
-P_hi = 1000;
+P_hi = 1200;
 sol = zeros(ceil((P_hi-P_lo)/P_int), 7);
 
 for P = P_lo:P_int:P_hi
@@ -478,7 +478,7 @@ for P = P_lo:P_int:P_hi
     fun = @(x)[integral(a,0,P1/x(1))-integral(b,0,P2/x(2));
         integral(b,0,P2/x(2))-integral(c,0,P3/x(3));
         x(1)+x(2)+x(3)-1];
-    x0 = [1 0.01 0.01];
+    x0 = [1 0.001 0.001];
     x = fsolve(fun,x0);
 
     x1 = double(x(1)); sol(i,2) = x1;
