@@ -350,9 +350,9 @@ y2 = str2sym(get(handles.edit4,'string'));
 
 
 i = 0;
-P_lo = 0.1;
-P_int = 1;
-P_hi = 20.1;
+P_lo = 100;
+P_int = 100;
+P_hi = 1200;
 sol = zeros(ceil((P_hi-P_lo)/P_int), 5);
 
 for P = P_lo:P_int:P_hi
@@ -368,7 +368,7 @@ for P = P_lo:P_int:P_hi
     P1 = double(P1);P2 = double(P2);
     fun = @(x)[integral(a,0,P1/x(1))-integral(b,0,P2/x(2));
         x(1)+x(2)-1];
-    x0 = [1 0.01];
+    x0 = [1 0.001];
     x = fsolve(fun,x0);
 
     x1 = double(x(1)); sol(i,2) = x1;
