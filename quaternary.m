@@ -490,7 +490,7 @@ P1 = double(P1);P2 = double(P2);P3 = double(P3);P4 = double(P4);
         integral(b,0,P2/x(2))-integral(c,0,P3/x(3));
         integral(c,0,P3/x(3))-integral(d,0,P4/x(4));
         x(1)+x(2)+x(3)+x(4)-1];
-x0 = [1 0.01 0.01 0.01];
+x0 = [1 0 0 0];
 x = fsolve(fun,x0);
 
     x1 = double(x(1));
@@ -584,7 +584,7 @@ for P = P_lo:P_int:P_hi
         integral(b,0,P2/x(2))-integral(c,0,P3/x(3));
         integral(c,0,P3/x(3))-integral(d,0,P4/x(4));
         x(1)+x(2)+x(3)+x(4)-1];
-    x0 = [1 0.001 0.001 0.001];
+    x0 = [1 0 0 0];
     x = fsolve(fun,x0);
 
     x1 = double(x(1)); sol(i,2) = x1;
