@@ -1,2 +1,2 @@
-IAST Calculator
-IAST calculation for multi-component gases adsorption
+IAST Calculator  
+An IAST calculation tool for multi-component gases separation
